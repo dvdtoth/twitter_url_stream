@@ -10,7 +10,7 @@ Requirements
 
 Setup
 -----
-Set your twitter keys in the config.ini
+Set your twitter API keys in the config.ini
 
 Usage
 -----

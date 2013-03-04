@@ -16,7 +16,7 @@ from ConfigParser import SafeConfigParser
 # Parse config file 
 Config = SafeConfigParser()
 Config.read("config.ini")
-consumer_key = Config.get('twitter_keys', 'consumer_key')s
+consumer_key = Config.get('twitter_keys', 'consumer_key')
 consumer_secret = Config.get('twitter_keys', 'consumer_secret')
 access_token = Config.get('twitter_keys', 'access_token')
 access_token_secret = Config.get('twitter_keys', 'access_token_secret')
