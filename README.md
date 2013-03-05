@@ -3,7 +3,7 @@ twitter_url_stream
 
 Simple python script to extract a stream of URLs by hashtag/keyword
 
-Requirements
+Dependencies
 ------------
 - Python 2.5 - 2.7
 - Tweepy: https://github.com/tweepy/tweepy
