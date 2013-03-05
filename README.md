@@ -1,4 +1,4 @@
-twitter_url_stream
+Twitter URL stream
 ==================
 
 Simple python script to extract a stream of URLs by hashtag/keyword
