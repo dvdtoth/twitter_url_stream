@@ -31,26 +31,28 @@ urlset = set()
 
 print 'Start streaming of "' + args.keyword + '" related URLs'
 
-# Start tweepy listener
-class StdOutListener(tweepy.streaming.StreamListener):
+def extracturl(url):
+        """ Follow redirects and extract urls """
+        try:
+                f = urllib2.urlopen(url)
+                # Open unique urls
+                if f not in urlset:
+                        urlset.add(f.url)
+                        print f.url
+                        # webbrowser.register("osx", webbrowser.MacOSX)
+                        # b = webbrowser.get("osx")
+                        # b.open_new_tab(u)
+        except:
+                print 'Couldn\'t open: ' + url
 
+class StdOutListener(tweepy.streaming.StreamListener):
+        """ Start Tweepy listener """
         def on_data(self, data):
                 tweet = json.loads(data)
                 # Find urls
                 urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', tweet['text'])
                 for u in urls:
-                        # Follow redirects and expand final url
-                        try:
-                                f = urllib2.urlopen(u)
-                                # Open unique urls
-                                if f not in urlset:
-                                        urlset.add(f.url)
-                                        print f.url
-                                        # webbrowser.register("osx", webbrowser.MacOSX)
-                                        # b = webbrowser.get("osx")
-                                        # b.open_new_tab(u)
-                        except:
-                                print 'Couldn\'t open: ' + u
+                        extracturl(u)
 
         def on_error(self, status):
                 print status
