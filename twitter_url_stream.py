@@ -26,7 +26,7 @@ argparser = argparse.ArgumentParser(description='Extract URLs from a twitter str
 argparser.add_argument('keyword', help='Keyword to look for')
 args = argparser.parse_args()
 
-b = webbrowser.get('macosx')
+#b = webbrowser.get('macosx')
 urlset = set()
 
 print 'Start streaming of "' + args.keyword + '" related URLs'
