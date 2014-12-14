@@ -31,7 +31,7 @@ args = argparser.parse_args()
 
 urlset = set()
 
-print 'Start streaming of "' + args.keyword + '" related URLs'
+print 'Start streaming of "' + args.keyword + '" related tweets'
 
 def extracturl(url):
         """ Follow redirects and extract urls """
